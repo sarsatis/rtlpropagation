@@ -1,0 +1,4 @@
+jenkins:
+  url: http://34.28.94.32:8080/
+  username: sarsatis
+  token:
