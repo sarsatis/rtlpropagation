@@ -17,7 +17,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.Element;
 
 @RestController
-@RequestMapping("/api/jenkins")
+@RequestMapping
 public class JenkinsController {
 
     @Autowired
@@ -26,11 +26,12 @@ public class JenkinsController {
     @Autowired
     private RestTemplate restTemplate;
 
-    @GetMapping("/trigger-job")
+    @GetMapping("/triggerjob")
     public ResponseEntity<String> triggerJenkinsJob() {
         try {
 
             // Step 1: Get Jenkins Crumb
+            System.out.println("jenkinsConfig.getJenkinsToken() = " + jenkinsConfig.getJenkinsToken());
             HttpHeaders crumbHeaders = new HttpHeaders();
             crumbHeaders.setBasicAuth(jenkinsConfig.getJenkinsUsername(), jenkinsConfig.getJenkinsToken());
             HttpEntity<String> crumbEntity = new HttpEntity<>(crumbHeaders);
