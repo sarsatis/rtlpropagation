@@ -17,7 +17,6 @@ import org.w3c.dom.Node;
 import org.w3c.dom.Element;
 
 @RestController
-@RequestMapping
 public class JenkinsController {
 
     @Autowired
